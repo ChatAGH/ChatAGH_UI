@@ -8,9 +8,14 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.http import require_http_methods
 from django.utils.encoding import iri_to_uri
 
-from chat_graph.graph import ChatGraph
+from chat_agh.graph import ChatGraph
+from chat_agh.utils.chat_history import ChatHistory
 from .models import Conversation, Message
 from . import selectors, services
+
+
+graph = ChatGraph()
+
 
 
 @login_required
@@ -82,13 +87,15 @@ def stream_reply(request: HttpRequest, conversation_id: int) -> StreamingHttpRes
     messages = list(selectors.conversation_messages(conv))
 
     lc_messages = [m.to_langchain_message() for m in messages]
-    graph = ChatGraph(chat_history=lc_messages)
-
+    chat_history = ChatHistory(messages=lc_messages)
     def event_stream() -> Iterator[bytes]:
         """Generator that yields SSE 'data:' lines as bytes and saves the final message."""
         assistant_text_parts: list[str] = []
         try:
-            for token in graph.invoke_stream(user_msg.content):
+            args = {
+                "chat_history": chat_history,
+            }
+            for token in graph.stream(**args):
                 assistant_text_parts.append(token)
                 yield f"data: {token}\n\n".encode("utf-8")
             # Signal completion
