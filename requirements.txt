@@ -3,7 +3,6 @@ anyio==4.10.0
 cachetools==5.5.2
 certifi==2025.8.3
 charset-normalizer==3.4.3
-chat_agh @ git+https://github.com/ChatAGH/ChatAGH_RAG@c927d2a16b738acdbca68d066040e9ce72479817
 click==8.2.1
 dnspython==2.7.0
 filelock==3.19.1
@@ -75,3 +74,4 @@ typing_extensions==4.14.1
 urllib3==2.5.0
 xxhash==3.5.0
 zstandard==0.24.0
+Django==5.2.6
