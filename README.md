@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 # ChatAGH_UI
 
-**ChatAGH_UI** is a web-based chat application that allows users to create conversations, send messages, and interact with an assistant.  
+**ChatAGH_UI** is a web-based chat application that allows users to create conversations, send messages, and interact with an assistant.
 The application is built using **Django** for the backend and **JavaScript** for the frontend.
 
 ---
@@ -20,7 +20,7 @@ The application is built using **Django** for the backend and **JavaScript** for
 
 ```
 ChatAGH_UI/
-├── .env.example          # Environment variables 
+├── .env.example          # Environment variables
 ├── .gitignore            # Git ignore file
 ├── requirements.txt      # Python dependencies
 ├── web_app/              # Main Django application

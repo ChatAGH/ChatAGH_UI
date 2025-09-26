@@ -1,10 +1,8 @@
 from pathlib import Path
-import sys
-import os
 from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).parent.parent.parent
-ENV_PATH = BASE_DIR.joinpath('.env')
+ENV_PATH = BASE_DIR.joinpath(".env")
 
 load_dotenv(ENV_PATH)
 
@@ -62,7 +60,9 @@ DATABASES = {
 }
 
 AUTH_PASSWORD_VALIDATORS = [
-    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
+    {
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
+    },
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
 ]
 

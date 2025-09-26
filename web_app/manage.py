@@ -1,12 +1,16 @@
-import os, sys
+import os
+import sys
 
 from django.core.management import execute_from_command_line
+from web_app.settings import ENV_PATH
 from dotenv import load_dotenv
 
 
-def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'web_app.settings')
+def main() -> None:
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "web_app.settings")
 
+    # TODO: Get rid of the sys.path.insert
+    # TODO: Dir should be added to the PYTHONPATH at system-level
     current_dir = os.path.dirname(os.path.abspath(__file__))
     parent_dir = os.path.dirname(current_dir)
     if parent_dir not in sys.path:
@@ -14,6 +18,7 @@ def main():
 
     execute_from_command_line(sys.argv)
 
+
 if __name__ == "__main__":
-    load_dotenv("/Users/wnowogorski/PycharmProjects/ChatAGH_UI/.env")
+    load_dotenv(ENV_PATH)
     main()
