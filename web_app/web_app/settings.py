@@ -3,10 +3,10 @@ import sys
 import os
 from dotenv import load_dotenv
 
-load_dotenv("/Users/wnowogorski/PycharmProjects/CHAT_AGH/.env")
+BASE_DIR = Path(__file__).parent.parent.parent
+ENV_PATH = BASE_DIR.joinpath('.env')
 
-BASE_DIR = Path(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-sys.path.append(str(BASE_DIR))
+load_dotenv(ENV_PATH)
 
 SECRET_KEY = "dev-secret-key-change-me"
 DEBUG = True
