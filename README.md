@@ -19,6 +19,7 @@ pip install git+https://github.com/ChatAGH/ChatAGH_RAG.git
 ```
 5. Run the app
 ```commandline
+python web_app/manage.py migrate
 python web_app/manage.py runserver  
 ```
 
