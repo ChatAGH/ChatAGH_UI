@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ChatAGH_UI
 
 **ChatAGH_UI** is a web-based chat application that allows users to create conversations, send messages, and interact with an assistant.  
