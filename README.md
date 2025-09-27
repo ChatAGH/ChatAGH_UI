@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ChatAGH_UI
 
 **ChatAGH_UI** is a web-based chat application that allows users to create conversations, send messages, and interact with an assistant.
@@ -22,7 +21,8 @@ The application is built using **Django** for the backend and **JavaScript** for
 ChatAGH_UI/
 ├── .env.example          # Environment variables
 ├── .gitignore            # Git ignore file
-├── requirements.txt      # Python dependencies
+├── poetry.lock           # Poetry lock file
+├── pyproject.toml        # Poetry configuration
 ├── web_app/              # Main Django application
 │   ├── db.sqlite3        # SQLite database
 │   ├── manage.py         # Django management script
@@ -84,7 +84,7 @@ ChatAGH_UI/
 
 3. **Install dependencies**
    ```bash
-   pip install -r requirements.txt
+   poetry install
    ```
 
 4. ***Run project***
