@@ -82,10 +82,11 @@ ChatAGH_UI/
     poetry env activate
    ```
 
-3. **Install dependencies**
+3. **Set up environment variables**
+   - Copy the example environment file and modify it as needed:
    ```bash
-   poetry install
-   ```
+   cp .env.example .env
+   # Edit .env to set your environment variables
 
 4. ***Run project***
    ```bash

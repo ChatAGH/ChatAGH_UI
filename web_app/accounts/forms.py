@@ -2,9 +2,6 @@ from typing import Dict, Any
 
 from django import forms
 from django.contrib.auth.models import User
-from django.forms import ModelForm
-
-from .models import UserProfile
 
 
 class RegisterForm(forms.ModelForm[User]):
@@ -33,18 +30,3 @@ class RegisterForm(forms.ModelForm[User]):
         if commit:
             user.save()
         return user
-
-
-class UserProfileForm(ModelForm[UserProfile]):
-    class Meta:
-        model = UserProfile
-        fields = "__all__"
-
-
-class UserForm(ModelForm[User]):
-    class Meta:
-        model = User
-        fields = ["username", "email"]
-
-
-data: Dict[str, Any] = {}
